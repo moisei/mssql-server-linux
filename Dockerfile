@@ -7,7 +7,8 @@ RUN apt update && \
 
 ENV SA_PASSWORD=My@Super@Secret
 
-ONBUILD RUN /opt/mssql/bin/sqlservr-setup --accept-eula --set-sa-password
+RUN /opt/mssql/bin/sqlservr-setup --accept-eula --set-sa-password
 
 ADD entrypoint.sh /
+
 ENTRYPOINT /entrypoint.sh
